@@ -1,0 +1,41 @@
+<button (click)="ChangeForm(btn)" #btn>Dodaj Pytanie</button>
+
+<div *ngIf="isGaming">
+
+<form (ngSubmit)="OnSubmit(form)" #form *ngIf="!show">
+<ul>
+    <li *ngFor="let q of questions">
+        Pytanie: {{q.question}} 
+        <input type="radio" [value]="q.answerA" [name]="q.id" />{{q.answerA}} 
+        <input type="radio" [value]="q.answerB" [name]="q.id" />{{q.answerB}}
+        <input type="radio" [value]="q.answerC" [name]="q.id"/>{{q.answerC}}
+    </li>
+    
+
+</ul>
+<button type="submit">Sprawdź</button>
+</form>
+
+<div *ngIf="show">
+    Twój wynik to: {{score}}<br>
+    <button (click)="PlayAgain()">Zagraj Ponownie</button>
+</div>
+
+</div>
+
+<div *ngIf="!isGaming">
+    <form (ngSubmit)="OnAddQuestion()" [formGroup]="addQuestionFrom" >
+        Tresc Pytania: <input type="text" formControlName="content" /><br>
+        Odpowiedz A: <input type="text" formControlName="answerA" /><br>
+        Odpowiedz B: <input type="text" formControlName="answerB"/><br>
+        Odpowiedz C: <input type="text" formControlName="answerC"/><br>
+        Poprawna Odpowiedz <select formControlName="correctAnswer">
+            <option value="0">A</option>
+            <option value="1">B</option>
+            <option value="2">C</option>
+        </select>
+
+        <button type="submit">Dodaj Pytanie</button>
+    </form>
+
+</div>
