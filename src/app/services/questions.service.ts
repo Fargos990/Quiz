@@ -8,18 +8,18 @@ export class QuestionsService {
 
   questions : Question[]  = [{
     id: 0,    
-    question: "BING CHILLING",
-    answerA: "SHINZO",
-    answerB:"BOAA",
-    answerC:"DAMNN", 
+    question: "Z iloma krajami graniczy Polska?",
+    answerA: "7",
+    answerB:"8",
+    answerC:"9", 
     correctAnswer:0},
     {
       id: 1,    
-      question: "BING AWZ",
-      answerA: "ASD",
-      answerB:"SD",
-      answerC:"SDZ", 
-      correctAnswer:1}]
+      question: "Największy ocean na Ziemi to?",
+      answerA: "Ocean Indyjski",
+      answerB:"Ocean Atlantycki",
+      answerC:"Ocean Spokojny", 
+      correctAnswer:2}]
 
   AddQuestion(question: Question)
   {
